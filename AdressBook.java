@@ -10,7 +10,7 @@ public class AdressBook {
 	public static void main(String[] args) {
      System.out.println("Welcome to Adress Book");
      Scanner s=new Scanner(System.in);
-     List<Contacts> cl=new ArrayList<Contacts>();
+     ArrayList<Contacts> cl=new ArrayList<Contacts>();
      System.out.println("want to add the contact person to Adress Book?");
      String str=s.next();
      if(str.equals("yes")) {
@@ -46,9 +46,17 @@ public class AdressBook {
     				 System.out.println("enter the new city name");
     			 }
     		 }
+    	 }else {
+    		 System.out.println("enter the person name");
+    		 String name=s.next();
+    		 for(Contacts c:cl) {
+    			 if(c.firstName.equals(name)) {
+    			        cl.remove(c);
+    			 }
     	 }
     	 
      }
 	}
      
 	}
+}
