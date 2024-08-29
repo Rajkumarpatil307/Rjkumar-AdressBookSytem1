@@ -22,6 +22,7 @@ public class AdressBook {
     	System.out.println("enter the phone no");
     	c.phoneNumber=s.nextLong();
     	System.out.println("enter the Adress details");
+    	s.next();
     	c.adress=s.nextLine();
     	System.out.println("enter the zip no");
     	c.zip=s.nextInt();
@@ -30,6 +31,7 @@ public class AdressBook {
     	System.out.println("enter the state name");
     	c.state=s.next();
     	cl.add(c);
+    	
     	
      }else if(str.equals("no")) {
     	 System.out.println("want to edit the person details");
