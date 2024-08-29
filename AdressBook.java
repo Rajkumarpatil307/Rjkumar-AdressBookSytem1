@@ -11,9 +11,24 @@ public class AdressBook {
      System.out.println("Welcome to Adress Book");
      Scanner s=new Scanner(System.in);
      ArrayList<Contacts> cl=new ArrayList<Contacts>();
-     System.out.println("want to add the contact person to Adress Book?");
-     String str=s.next();
-     if(str.equals("yes")) {
+     char ch;
+     
+   while(true) {
+    
+     
+     System.out.println("Enter the below option for: ");
+     System.out.println("A : Add contact in Adress Book System");
+     System.out.println("B : Modification of Contacts in Adress Book System");
+     System.out.println("C : Remove contacts in Adress Book Sytem");
+     System.out.println("D : Exit from  Adress Book System");
+
+	 String str=s.next();
+      ch=str.charAt(0); 
+    if(ch=='D') {
+    	break;
+    }
+    
+     if(ch=='A') {
     	Contacts c=new Contacts();
     	System.out.println("enter the person name");
     	c.firstName=s.next();
@@ -31,14 +46,13 @@ public class AdressBook {
     	System.out.println("enter the state name");
     	c.state=s.next();
     	cl.add(c);
+    	System.out.println("Your contact is added to the Adress Book System");
     	
     	
-     }else if(str.equals("no")) {
-    	 System.out.println("want to edit the person details");
-    	 String str1=s.next();
-    	 if(str1.equals("yes")) {
+     }else if(ch=='B') {
     		 System.out.println("enter the person name");
     		 String name=s.next();
+    		 
     		 for(Contacts c:cl) {
     			 if(c.firstName.equals(name)) {
     				 System.out.println("enter the new phone number");
@@ -46,19 +60,26 @@ public class AdressBook {
     				 System.out.println("enter the new email adress");
     				 c.email=s.next();
     				 System.out.println("enter the new city name");
+    				 c.city=s.next();
+    			    	System.out.println("Your contact is Modified in the Adress Book System");
+
     			 }
-    		 }
-    	 }else {
-    		 System.out.println("enter the person want to delete ");
+    		 } 
+    		 
+    		 
+    	 }else if(ch=='C'){
+    		 System.out.println("enter the person name want to delete ");
     		 String name=s.next();
     		 for(Contacts c:cl) {
     			 if(c.firstName.equals(name)) {
     			        cl.remove(c);
+    			    	System.out.println("Your contact is removed from  the Adress Book System");
+
     			 }
     	 }
     	 
      }
+   }
 	}
      
 	}
-}
