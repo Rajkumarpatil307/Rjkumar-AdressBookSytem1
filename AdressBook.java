@@ -47,7 +47,7 @@ public class AdressBook {
     			 }
     		 }
     	 }else {
-    		 System.out.println("enter the person name");
+    		 System.out.println("enter the person want to delete ");
     		 String name=s.next();
     		 for(Contacts c:cl) {
     			 if(c.firstName.equals(name)) {
